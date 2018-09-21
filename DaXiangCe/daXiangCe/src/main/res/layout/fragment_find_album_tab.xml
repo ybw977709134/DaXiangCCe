@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- title bar -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height">
+
+            <!-- normal title -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/tv_find"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/title_bar_height"
+                    android:layout_centerInParent="true"
+                    android:text="@string/explore"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_title" />
+
+                <ImageView
+                    android:id="@+id/iv_show_search"
+                    android:layout_width="@dimen/title_bar_height"
+                    android:layout_height="@dimen/title_bar_height"
+                    android:layout_alignParentRight="true"
+                    android:contentDescription="@string/blank"
+                    android:scaleType="center"
+                    android:src="@drawable/search" />
+
+
+            </RelativeLayout>
+
+            <!-- search bar -->
+
+            <LinearLayout
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_bar_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <!-- result count -->
+
+                    <TextView
+                        android:id="@+id/iv_search_result_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right|center_vertical"
+                        android:paddingRight="35dp"
+                        android:textColor="@color/search_bar_result_count_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- search_icon -->
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/blank"
+                            android:scaleType="center"
+                            android:src="@drawable/search_bar_icon" />
+
+                        <!-- input box -->
+
+                        <EditText
+                            android:id="@+id/et_search_input"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:hint="@string/search_album"
+                            android:padding="0dp"
+                            android:singleLine="true" />
+
+                        <!-- clear inputs -->
+
+                        <ImageView
+                            android:id="@+id/iv_search_clear"
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/blank"
+                            android:scaleType="center"
+                            android:src="@drawable/edit_clear" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- search btn -->
+
+                <TextView
+                    android:id="@+id/tv_search_it"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="7dp"
+                    android:text="@string/search"
+                    android:textColor="@color/clickable_blue"
+                    android:textSize="@dimen/text_size_major"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <LinearLayout
+        android:id="@+id/ll_tab_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/user_detail_corners_bg"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hot_album"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/files_in_album_corners_bg"
+            android:gravity="center"
+            android:text="@string/hot_album"
+            android:textColor="#ff0794e1"
+            android:textSize="@dimen/text_size_normal" />
+
+        <TextView
+            android:id="@+id/activity_album"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/acticity_album"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal" />
+
+        <TextView
+            android:id="@+id/local_album"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/local_album"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+
+    <!-- contents -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.daxiangce123.android.ui.view.CViewPager
+            android:id="@+id/vp_container_album"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:persistentDrawingCache="animation" />
+
+        <FrameLayout
+            android:id="@+id/fl_search_album"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <!-- results listview -->
+
+            <com.handmark.pulltorefresh.library.PullToRefreshListView
+                android:id="@+id/lv_album_results"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@color/transparent"
+                android:divider="@null"
+                android:listSelector="@drawable/list_selector"
+                android:overScrollMode="never"
+                android:scrollbars="none" />
+
+            <!-- empty View -->
+
+            <LinearLayout
+                android:id="@+id/v_empty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="100dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/blank"
+                    android:scaleType="center"
+                    android:src="@drawable/search_non_result" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="20dp"
+                    android:singleLine="true"
+                    android:text="@string/no_result_found"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

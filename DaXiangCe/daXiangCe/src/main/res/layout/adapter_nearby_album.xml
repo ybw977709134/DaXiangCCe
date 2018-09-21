@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="10dp" >
+
+    <!-- album cover -->
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@android:color/white"
+        android:padding="3dp" >
+
+        <com.daxiangce123.android.ui.view.ImageViewEx
+            android:id="@+id/iv_album_cover_nearby"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:contentDescription="@string/blank"
+            android:scaleType="centerCrop" />
+    </FrameLayout>
+
+    <!-- Detail -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="10dp" >
+
+        <!-- name -->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <!-- album name -->
+
+            <com.daxiangce123.android.ui.view.TextViewParserEmoji
+                android:id="@+id/tv_album_name_nearby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:paddingRight="30dp"
+                android:singleLine="true"
+                android:textColor="@color/clickable_black"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+
+            <!-- private indicator -->
+
+            <ImageView
+                android:id="@+id/iv_private"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="-30dp"
+                android:layout_toRightOf="@id/tv_album_name_nearby"
+                android:contentDescription="@string/blank"
+                android:scaleType="center"
+                android:src="@drawable/gray_small_lock" />
+        </RelativeLayout>
+        <!-- details -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
+
+            <!-- image size -->
+
+            <TextView
+                android:id="@+id/tv_album_size_nearby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/gray_small_file"
+                android:textColor="@color/clickable_grey"
+                android:textSize="@dimen/text_size_small" />
+
+            <!-- member size -->
+
+            <TextView
+                android:id="@+id/tv_album_member_nearby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/gray_small_people"
+                android:textColor="@color/clickable_grey"
+                android:textSize="@dimen/text_size_small" />
+
+            <!-- views size -->
+
+            <TextView
+                android:id="@+id/tv_album_views_nearby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/views_bg"
+                android:textColor="@color/clickable_grey"
+                android:textSize="@dimen/text_size_small" />
+
+            <!-- share size -->
+
+            <TextView
+                android:id="@+id/tv_album_shares_nearby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/shares_bg"
+                android:textColor="@color/clickable_grey"
+                android:textSize="@dimen/text_size_small" />
+
+            <!-- distance -->
+
+            <TextView
+                android:id="@+id/tv_album_distance_nearby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/location"
+                android:textColor="#FF65b3eb"
+                android:textSize="@dimen/text_size_small"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <com.daxiangce123.android.ui.view.TextViewParserEmoji
+            android:id="@+id/tv_album_discription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/album_item_name_corners_bg"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/clickable_black"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+
+</LinearLayout>

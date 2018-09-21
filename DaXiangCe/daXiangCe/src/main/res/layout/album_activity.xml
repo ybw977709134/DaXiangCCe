@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/album_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Title Bar -->
+
+            <RelativeLayout
+                android:id="@id/title_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_bar_height"
+                android:layout_alignParentTop="true"
+                android:background="#f0f0f0">
+
+                <!-- left title button -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_back"
+                    android:layout_width="@dimen/title_bar_height"
+                    android:layout_height="@dimen/title_bar_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/title_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/preference_margin_rl"
+                        android:background="@drawable/back_bg"
+                        android:gravity="center" />
+                </RelativeLayout>
+
+                <!-- right title button -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_settings"
+                    android:layout_width="@dimen/title_bar_height"
+                    android:layout_height="@dimen/title_bar_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/title_album_setting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/preference_margin_rl"
+                        android:background="@drawable/setting_bg"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/title_album_report"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/preference_margin_rl"
+                        android:gravity="center"
+                        android:text="@string/report"
+                        android:textSize="@dimen/text_size_normal"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <!-- title text -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_album_detail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@id/rl_settings"
+                    android:layout_toRightOf="@id/rl_back"
+                    android:paddingBottom="3dp">
+
+                    <com.daxiangce123.android.ui.view.TextViewParserEmoji
+                        android:id="@+id/title_album_detail_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/text_size_large" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <!-- content -->
+
+            <FrameLayout
+                android:id="@+id/fl_content"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <FrameLayout
+                    android:id="@id/fragment_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#f0f0f0" />
+                <!-- Tab -->
+
+                <include
+                    layout="@layout/layout_album_image_mumber_tab_with_daynight_header"
+                    android:visibility="invisible" />
+
+                <com.daxiangce123.android.ui.view.AlbumBottomBar
+                    android:id="@+id/iv_btn_panel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/bottom_bar_height"
+                    android:layout_gravity="bottom"
+                    android:background="#E6FFFFFF"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/abb_sort"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/blank"
+                        android:scaleType="center"
+                        android:src="@drawable/abb_sort" />
+
+                    <ImageView
+                        android:id="@+id/abb_upload_join"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/blank"
+                        android:scaleType="center"
+                        android:src="@drawable/abb_upload" />
+
+                    <ImageView
+                        android:id="@+id/abb_share"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/blank"
+                        android:scaleType="center"
+                        android:src="@drawable/abb_share" />
+
+                    <ImageView
+                        android:id="@+id/abb_delete"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/blank"
+                        android:scaleType="center"
+                        android:src="@drawable/abb_delete" />
+                    />
+                </com.daxiangce123.android.ui.view.AlbumBottomBar>
+            </FrameLayout>
+
+            <!-- content -->
+
+
+            <!-- bottom bar -->
+
+            <LinearLayout
+                android:id="@+id/ll_btn_panel"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/bottom_bar_height"
+                android:layout_alignParentBottom="true"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <include layout="@layout/layout_divider" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#33f0f0f0"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_all"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_all_circle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/select_all_circle" />
+
+                        <TextView
+                            android:id="@+id/tv_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/tv_all_circle"
+                            android:text="@string/select_all"
+                            android:textColor="#767676"
+                            android:textSize="@dimen/text_size_major" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_cancel"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="90dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="#ffffff"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_cancel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/cancel"
+                                android:textColor="#767676"
+                                android:textSize="@dimen/text_size_major" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_delete"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_delete_1"
+                            android:layout_width="90dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="#ffffff"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_delete"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/delete"
+                                android:textColor="#d7d7d7"
+                                android:textSize="@dimen/text_size_major" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <!-- upload guide -->
+
+        <LinearLayout
+            android:id="@+id/ll_user_guide_upload"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#a6000000"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_upload_guide" />
+
+        </LinearLayout>
+
+        <!-- share guide -->
+
+        <LinearLayout
+            android:id="@+id/ll_user_guide_share"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#a6000000"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_share_guide" />
+        </LinearLayout>
+
+        <!-- upload-share guide -->
+
+        <LinearLayout
+            android:id="@+id/ll_upload_share_guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#a6000000"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_upload_share_guide" />
+        </LinearLayout>
+
+        <!-- bullet guide -->
+
+        <LinearLayout
+            android:id="@+id/ll_bullet_guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#a6000000"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_bullet_guide" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_bullet"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>

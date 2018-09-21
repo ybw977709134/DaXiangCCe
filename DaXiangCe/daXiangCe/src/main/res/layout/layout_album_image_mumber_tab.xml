@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_tab_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#f0f0f0"
+    android:paddingBottom="@dimen/preference_padding_bt"
+    android:paddingTop="@dimen/preference_padding_bt" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/user_detail_corners_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_showtimeline"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/files_in_album_corners_bg"
+            android:gravity="center"
+            android:text="@string/image"
+            android:textColor="#ff0794e1"
+            android:textSize="@dimen/text_size_normal" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tv_showmembers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/tab_members"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_normal" />
+
+            <ImageView
+                android:id="@+id/tv_red_dot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="39dp"
+                android:gravity="center_vertical"
+                android:scaleType="centerInside"
+                android:src="@drawable/red_dot_bg"
+                android:visibility="invisible" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

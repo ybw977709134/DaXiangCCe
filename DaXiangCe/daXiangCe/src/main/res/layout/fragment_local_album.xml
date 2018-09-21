@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- contents -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- results listview -->
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/lv_album_results"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@color/transparent"
+            android:divider="@null"
+            android:fadeScrollbars="true"
+            android:listSelector="@drawable/list_selector"
+            android:overScrollMode="never"
+            android:scrollbars="vertical" />
+
+        <!-- empty View -->
+
+        <LinearLayout
+            android:id="@+id/v_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/blank"
+                android:scaleType="center"
+                android:src="@drawable/search_no_result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:singleLine="true"
+                android:text="@string/no_result_found"
+                android:textColor="@color/clickable_black"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/user_guide_bg" >
+
+    <!-- splash -->
+
+    <LinearLayout
+        android:id="@+id/ll_splash_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:gravity="center|bottom"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/blank"
+                android:scaleType="centerInside"
+                android:src="@drawable/logo_with_solgan_cn" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp" >
+
+            <Button
+                android:id="@+id/btn_begin_to_use"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/user_guide_btn_height"
+                android:background="@drawable/clickable_trans_white_with_stroke"
+                android:gravity="center"
+                android:text="@string/begin_to_use"
+                android:textColor="@color/clickable_white_blue" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- app detail -->
+
+    <include
+        layout="@layout/layout_app_detail"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_login_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/user_guide_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/samsung_bottom_shadow_bottom"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="40dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/login_with_socal_network"
+                android:textColor="#99ffffff"
+                android:textSize="@dimen/text_size_normal" />
+
+            <include layout="@layout/layout_3rd_auth"/>
+            <!-- <RelativeLayout
+                android:id="@+id/weibo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/user_guide_btn_height"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/clickable_white_grey_with_stroke" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/sina_weibo"
+                    android:textColor="@color/clickable_weibo_red"
+                    android:textSize="@dimen/text_size_major" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:contentDescription="@string/blank"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/weibo" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/qq"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/user_guide_btn_height"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/clickable_white_grey_with_stroke" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/qq"
+                    android:textColor="@color/clickable_qq_blue"
+                    android:textSize="@dimen/text_size_major" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:contentDescription="@string/blank"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/qq" />
+            </RelativeLayout> -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/guide_warn_tip"
+                android:textColor="#99ffffff"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <!-- agreement -->
+
+            <TextView
+                android:id="@+id/agreement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="@string/agreement"
+                android:textColor="@color/clickable_light_white_trans"
+                android:textSize="@dimen/text_size_small" />
+            <!-- privacy -->
+
+            <TextView
+                android:id="@+id/privacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/privacy"
+                android:textColor="@color/clickable_light_white_trans"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+        <!-- login -->
+
+    </LinearLayout>
+
+</FrameLayout>

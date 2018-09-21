@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_indexer_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/input_padding_tb"
+        android:paddingLeft="@dimen/input_padding_rl"
+        android:paddingRight="@dimen/input_padding_rl"
+        android:paddingTop="@dimen/input_padding_tb" >
+
+        <!-- emoji -->
+
+        <ImageView
+            android:id="@+id/btn_emoji_index_input"
+            android:layout_width="@dimen/input_indexer_item_height"
+            android:layout_height="@dimen/input_indexer_item_height"
+            android:contentDescription="@string/blank"
+            android:scaleType="center"
+            android:src="@drawable/emoji" />
+
+        <!-- voice -->
+
+
+        <!--
+              <ImageView
+            android:id="@+id/btn_voice_indexer_input"
+            android:layout_width="@dimen/input_indexer_item_height"
+            android:layout_height="@dimen/input_indexer_item_height"
+            android:layout_marginRight="@dimen/input_padding_tb"
+            android:contentDescription="@string/blank"
+            android:scaleType="center"
+            android:src="@drawable/emoji" />
+        -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/input_padding_tb"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <!-- edittext -->
+
+            <com.daxiangce123.android.ui.view.emoji.EmojiEditText
+                android:id="@+id/et_edit_indexer_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/add_comment"
+                android:imeOptions="actionSend"
+                android:maxLines="3"
+                android:textColor="@color/black" />
+
+            <!-- record bar -->
+            <!--
+            <com.yunio.pickup.view.input.VoiceView
+                android:id="@+id/btn_record_bar_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/press_and_talk"
+                android:textColor="@color/clickable_white"
+                android:visibility="gone" />
+            -->
+
+
+            <!--
+                 <com.yunio.pickup.view.chat.VoiceView
+                android:id="@+id/voiceView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VoiceView" />
+            -->
+
+        </LinearLayout>
+
+        <!--
+        <ImageView
+            android:id="@+id/btn_emoji_index_input"
+            android:layout_width="@dimen/input_indexer_item_height"
+            android:layout_height="@dimen/input_indexer_item_height"
+            android:contentDescription="@string/blank"
+            android:scaleType="center"
+            android:src="@drawable/emoji" />
+        -->
+
+        <LinearLayout
+            android:layout_width="@dimen/input_indexer_item_width"
+            android:layout_height="@dimen/input_indexer_item_height"
+            android:layout_marginLeft="@dimen/input_padding_tb"
+            android:gravity="center" >
+
+            <!-- more -->
+
+
+            <!--
+                 <ImageView
+                android:id="@+id/iv_more_indexer_input"
+                android:layout_width="@dimen/input_indexer_item_height"
+                android:layout_height="@dimen/input_indexer_item_height"
+                android:contentDescription="@string/blank"
+                android:scaleType="center"
+                android:src="@drawable/emoji" />
+            -->
+
+
+            <!-- send -->
+
+            <Button
+                android:id="@+id/btn_send_indexer_input"
+                android:layout_width="@dimen/input_indexer_item_width"
+                android:layout_height="@dimen/input_indexer_item_height"
+                android:background="@drawable/btn_bg"
+                android:gravity="center"
+                android:text="@string/send"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- container -->
+
+    <FrameLayout
+        android:id="@+id/fl_container_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

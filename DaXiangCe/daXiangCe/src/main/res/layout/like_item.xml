@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="3dp"
+    android:paddingTop="3dp">
+
+    <ImageView
+        android:id="@+id/iv_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="@dimen/preference_padding"
+        android:layout_marginRight="@dimen/album_item_name_padding_rl"
+        android:layout_marginTop="7dp"
+        android:contentDescription="@string/blank"
+        android:src="@drawable/unlike_bg" />
+
+    <com.daxiangce123.android.ui.view.TextViewParserEmoji
+        android:id="@+id/tv_someone_like"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:paddingBottom="3dp"
+        android:paddingRight="@dimen/preference_padding"
+        android:paddingTop="3dp"
+        android:textSize="@dimen/text_size_little"
+        android:visibility="gone" />
+
+    <com.daxiangce123.android.ui.view.NoScrollGridView
+        android:id="@+id/gv_like_list"
+        style="@style/PhotoGridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/album_item_name_padding_rl"
+        android:layout_toLeftOf="@id/tv_someone_like"
+        android:layout_toRightOf="@id/iv_like"
+        android:columnWidth="40dp"
+        android:gravity="center"
+        android:horizontalSpacing="2dp"
+        android:listSelector="@drawable/transparent"
+        android:numColumns="auto_fit"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="1dp" />
+
+</RelativeLayout>

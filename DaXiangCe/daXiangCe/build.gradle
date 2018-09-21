@@ -1,0 +1,143 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        keystore {
+            keyAlias 'cliq'
+            keyPassword 'eajkfaj8998223dkmcwx'
+            storeFile file('../dxc_eajkfaj8998223dkmcwx_keystore')
+            storePassword 'eajkfaj8998223dkmcwx'
+        }
+    }
+    compileSdkVersion 19
+    buildToolsVersion '21.1.2'
+    defaultConfig {
+        applicationId "com.daxiangce123"
+        minSdkVersion 10
+        targetSdkVersion 18
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.keystore
+        }
+        debug {
+            zipAlignEnabled false
+            signingConfig signingConfigs.keystore
+        }
+    }
+    productFlavors {
+        google {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "google"]
+        }
+        daxiangce {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "daxiangce"]
+        }
+        umeng {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "umeng"]
+        }
+        baidu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
+        }
+        jiu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "91"]
+        }
+        hiapk {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "hiapk"]
+        }
+        san {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "360"]
+        }
+        tencent {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "tencent"]
+        }
+        wandoujia {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+        }
+        xiaomi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+        }
+        amazon {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "amazon"]
+        }
+        meizu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "meizu"]
+        }
+        huawei {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "huawei"]
+        }
+        lenovo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "lenovo"]
+        }
+        oppo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "oppo"]
+        }
+        wangyi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "163"]
+        }
+        taobao {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "taobao"]
+        }
+        appchina {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "appchina"]
+        }
+        anzhi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "anzhi"]
+        }
+        zol {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "zol"]
+        }
+        dangle {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "dangle"]
+        }
+        mumayi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "mumayi"]
+        }
+        eoemarket {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "eoemarket"]
+        }
+        nduo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "nduo"]
+        }
+        sjapk {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sjapk"]
+        }
+        mobile {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "10086"]
+        }
+        downza {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "downza"]
+        }
+        sougou {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sougou"]
+        }
+    }
+
+    //这个是解决lint报错的代码
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile project(':cliqumengsdk')
+    compile project(':cliqzxingportrait')
+    compile project(':cliqpulltorefreshlibrary')
+    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.alibaba:fastjson:1.2.5'
+    compile 'de.greenrobot:eventbus:2.4.0'
+    //    compile files('libs/baidumapapi_v2_4_2.jar')
+    compile files('libs/httpclientlib-4.2.1.jar')
+    compile files('libs/libammsdk.jar')
+    compile files('libs/SocialSDK_QQZone_2.jar')
+    compile files('libs/mid-sdk-2.10.jar')
+    compile files('libs/mta-sdk-2.0.2.jar')
+    compile files('libs/pushservice-4.1.0.jar')
+    compile files('libs/weibosdkcore_2.5.0.jar')
+    compile files('libs/pinyin4j-2.5.0.jar')
+}

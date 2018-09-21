@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:groubum="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical" >
+
+    <!-- Title -->
+
+    <RelativeLayout
+        android:id="@+id/rl_title_ivite_friend"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/tv_title_ivite_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/invite_friend"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_title" />
+
+        <TextView
+            android:id="@+id/tv_title_ivite_friend_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/preference_margin_rl"
+            android:background="@drawable/back_bg"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <!-- Invitation Code  text -->
+
+    <TextView
+        android:id="@+id/tv_initation_code_text"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/preference_height"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/preference_padding"
+        android:text="@string/invitation_code"
+        android:textColor="@color/grey" />
+
+    <include layout="@layout/layout_divider" />
+
+    <!-- Invitation Code -->
+
+    <RelativeLayout
+        android:id="@+id/rl_invitation_code"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/preference_padding" >
+
+        <TextView
+            android:id="@+id/tv_invitation_code"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/blue_overlay"
+            android:textSize="@dimen/text_size_title" />
+
+        <!-- Copy Invitation Code -->
+
+        <Button
+            android:id="@+id/bt_copy_invitation_code"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/preference_height"
+            android:layout_below="@id/tv_invitation_code"
+            android:layout_marginLeft="@dimen/preference_padding"
+            android:layout_marginRight="@dimen/preference_padding"
+            android:layout_marginTop="@dimen/preference_padding"
+            android:background="@drawable/add_album_option_blue"
+            android:gravity="center"
+            android:text="@string/copy_invitation_code"
+            android:textColor="@color/clickable_black_white"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/preference_margin_top" />
+
+    <!-- Album QR Code -->
+
+    <com.daxiangce123.android.ui.view.Preference
+        android:id="@+id/pf_album_qr_code"
+        style="@style/preference_style"
+        android:background="@drawable/item_bg"
+        groubum:bottomMarginLeft="@dimen/preference_padding"
+        groubum:leftIcon="@drawable/qr"
+        groubum:title="@string/album_qr_code"
+        groubum:topLineHeight="1dp" />
+
+    <!-- Invite WeChat Friend -->
+
+    <com.daxiangce123.android.ui.view.Preference
+        android:id="@+id/pf_invite_wechat_friend"
+        style="@style/preference_style"
+        android:background="@drawable/item_bg"
+        groubum:bottomMarginLeft="@dimen/preference_padding"
+        groubum:leftIcon="@drawable/weixin"
+        groubum:title="@string/invite_wechat_friend" />
+
+    <!-- Invite Via SMS -->
+
+    <com.daxiangce123.android.ui.view.Preference
+        android:id="@+id/pf_invite_via_sms"
+        style="@style/preference_style"
+        android:background="@drawable/item_bg"
+        groubum:leftIcon="@drawable/sms"
+        groubum:title="@string/invite_via_sms" />
+
+</LinearLayout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_verify_phone_number_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/user_guide_bg" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/blank"
+            android:scaleType="center"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/binding_phone_number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_title" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/pls_input_old_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_marginLeft="@dimen/login_padding"
+        android:gravity="left|center"
+        android:text="@string/pls_input_old_phone_number"
+        android:textSize="@dimen/text_size_normal"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/modify_phone_number_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/login_padding"
+        android:layout_marginLeft="@dimen/login_padding"
+        android:gravity="left|center"
+        android:textSize="@dimen/text_size_tiny" />
+
+    <include layout="@layout/layout_divider" />
+
+    <RelativeLayout
+        android:id="@+id/rl_input_old_phone_number"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="#fffffb"
+        android:paddingLeft="@dimen/login_padding"
+        android:paddingRight="@dimen/login_padding" >
+
+        <TextView
+            android:id="@+id/tv_area_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="+86"
+            android:textSize="@dimen/text_size_normal" />
+
+        <EditText
+            android:id="@+id/et_input_old_phone_number"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_area_code"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:hint="@string/pls_input_you_phone_number"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <TextView
+        android:id="@+id/pls_input_new_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_marginLeft="@dimen/login_padding"
+        android:gravity="left|center"
+        android:text="@string/pls_input_new_phone_number"
+        android:textSize="@dimen/text_size_normal"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/rl_input_new_phone_number_top_line"
+        layout="@layout/layout_divider"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_input_new_phone_number"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="#fffffb"
+        android:paddingLeft="@dimen/login_padding"
+        android:paddingRight="@dimen/login_padding"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tv_new_area_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="+86"
+            android:textSize="@dimen/text_size_normal" />
+
+        <EditText
+            android:id="@+id/et_input_new_phone_number"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_new_area_code"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:hint="@string/pls_input_eleven_new_phone_number"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/rl_input_new_phone_number_bottom_line"
+        layout="@layout/layout_divider"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/get_verification_code"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_marginLeft="@dimen/login_padding"
+        android:layout_marginRight="@dimen/login_padding"
+        android:layout_marginTop="@dimen/login_padding"
+        android:background="@drawable/clickalbe_get_verification_code_grey_white_stroke"
+        android:gravity="center"
+        android:text="@string/get_verification_code"
+        android:textColor="@color/clickable_blue_grey"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:layout_marginTop="@dimen/login_padding"
+        layout="@layout/layout_divider" />
+
+    <EditText
+        android:id="@+id/et_input_sms"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_centerVertical="true"
+        android:background="#fffffb"
+        android:hint="@string/pls_input_sms"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:paddingLeft="@dimen/login_padding"
+        android:paddingRight="@dimen/login_padding"
+        android:textSize="@dimen/text_size_normal" />
+
+    <include layout="@layout/layout_divider" />
+
+    <TextView
+        android:id="@+id/submit_verification_code"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_marginLeft="@dimen/login_padding"
+        android:layout_marginRight="@dimen/login_padding"
+        android:layout_marginTop="@dimen/login_padding"
+        android:background="@drawable/clickalbe_get_verification_code_grey_white_stroke"
+        android:gravity="center"
+        android:text="@string/submit"
+        android:textColor="@color/clickable_blue_grey"
+        android:textSize="@dimen/text_size_normal" />
+
+</LinearLayout>

@@ -1,0 +1,194 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From DaXiangCe:
+* .custom_rules.xml.swp
+* .gitignore
+* .swp
+* Cliq123/
+* Cliq123/.project
+* Cliq123/.settings/
+* Cliq123/.settings/org.eclipse.jdt.core.prefs
+* Cliq123/AndroidManifest.xml
+* Cliq123/build.xml
+* Cliq123/cliq_eajkfaj8998223dkmcwx_keystore
+* Cliq123/libs/
+* Cliq123/libs/android-support-v4.jar
+* Cliq123/libs/temboo-1.76-core-for-twitter.jar
+* Cliq123/libs/twitter-1.76-temboo.jar
+* Cliq123/libs/twitter4j-core-4.0.1.jar
+* Cliq123/libs/twitter4j-media-support-4.0.2-SNAPSHOT.jar
+* Cliq123/local.properties
+* Cliq123/proguard-project.txt
+* Cliq123/readme.MD
+* Cliq123/res/
+* Cliq123/res/drawable-hdpi/
+* Cliq123/res/drawable-hdpi/ic_launcher.png
+* Cliq123/res/drawable-hdpi/logo_with_solgan_en.png
+* Cliq123/res/drawable-hdpi/user_guide_albums.png
+* Cliq123/res/drawable-hdpi/user_guide_share.png
+* Cliq123/res/drawable-hdpi/user_guide_timeline.png
+* Cliq123/res/drawable-xhdpi/
+* Cliq123/res/drawable-xhdpi/ic_launcher.png
+* Cliq123/res/drawable-xxhdpi/
+* Cliq123/res/drawable-xxhdpi/ic_launcher.png
+* Cliq123/res/layout/
+* Cliq123/res/layout/fragment_login.xml
+* Cliq123/res/layout/fragment_splash.xml
+* Cliq123/res/layout/fragment_user_guide.xml
+* Cliq123/res/layout/layout_app_detail.xml
+* Cliq123/res/values-v14/
+* Cliq123/res/values-v14/styles.xml
+* Cliq123/res/values/
+* Cliq123/res/values/strings.xml
+* Cliq123/res/values/styleables.xml
+* Cliq123/res/values/styles.xml
+* Cliq123/src/
+* Cliq123/src/com/
+* Cliq123/src/com/cliq123/
+* Cliq123/src/com/cliq123/CliqApp.java
+* Cliq123/src/com/cliq123/auth/
+* Cliq123/src/com/cliq123/auth/FBHelper.java
+* Cliq123/src/com/cliq123/auth/TwitterHelper.java
+* Cliq123/src/com/cliq123/auth/TwitterUtil.java
+* Cliq123/src/com/cliq123/ui/
+* Cliq123/src/com/cliq123/ui/SplashActivity.java
+* Cliq123/src/com/cliq123/ui/fragments/
+* Cliq123/src/com/cliq123/ui/fragments/LoginFragment.java
+* Cliq123/src/com/cliq123/ui/fragments/SplashFragment.java
+* Cliq123/src/com/cliq123/ui/fragments/UserGuideFragment.java
+* README
+* ant.properties
+* auto.prop
+* build.xml
+* custom_rules.xml
+* discription_bg.png
+* dxc_eajkfaj8998223dkmcwx_keystore
+* ic_launcher-web.png
+* jni/
+* jni/Doxyfile
+* jni/gif.c
+* jni/giflib/
+* jni/giflib/config.h
+* jni/giflib/dgif_lib.c
+* jni/giflib/gif_hash.c
+* jni/giflib/gif_hash.h
+* jni/giflib/gif_lib.h
+* jni/giflib/gif_lib_private.h
+* jni/giflib/gifalloc.c
+* pack.config
+* proguard-project.txt
+* proguard.cfg
+From cliq-pull-to-refresh-library:
+* LICENSE
+* build.xml
+* default.properties
+* pom.xml
+* proguard-project.txt
+From cliq-umeng-sdk:
+* build.xml
+* default.properties
+* proguard-project.txt
+From cliq-zxing-portrait:
+* build.xml
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+gson-2.2.4.jar => com.google.code.gson:gson:2.2.4
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.2.4.jar => version 2.2.4 in com.google.code.gson:gson:2.2.4
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In cliq-pull-to-refresh-library:
+* AndroidManifest.xml => cliqpulltorefreshlibrary/src/main/AndroidManifest.xml
+* assets/ => cliqpulltorefreshlibrary/src/main/assets/
+* lint.xml => cliqpulltorefreshlibrary/lint.xml
+* res/ => cliqpulltorefreshlibrary/src/main/res/
+* src/ => cliqpulltorefreshlibrary/src/main/java/
+In cliq-umeng-sdk:
+* AndroidManifest.xml => cliqumengsdk/src/main/AndroidManifest.xml
+* assets/ => cliqumengsdk/src/main/assets/
+* libs/armeabi/libbspatch.so => cliqumengsdk/src/main/jniLibs/armeabi/libbspatch.so
+* libs/umeng-sdk-analytics_v5.2.2_update_v2.4.1.jar => cliqumengsdk/libs/umeng-sdk-analytics_v5.2.2_update_v2.4.1.jar
+* lint.xml => cliqumengsdk/lint.xml
+* res/ => cliqumengsdk/src/main/res/
+* src/ => cliqumengsdk/src/main/java/
+In cliq-zxing-portrait:
+* AndroidManifest.xml => cliqzxingportrait/src/main/AndroidManifest.xml
+* assets/ => cliqzxingportrait/src/main/assets/
+* libs/zxingCore2.1.jar => cliqzxingportrait/libs/zxingCore2.1.jar
+* lint.xml => cliqzxingportrait/lint.xml
+* res/ => cliqzxingportrait/src/main/res/
+* src/ => cliqzxingportrait/src/main/java/
+In DaXiangCe:
+* AndroidManifest.xml => daXiangCe/src/main/AndroidManifest.xml
+* assets/ => daXiangCe/src/main/assets/
+* libs/armeabi-v7a/libgif.so => daXiangCe/src/main/jniLibs/armeabi-v7a/libgif.so
+* libs/armeabi/libbdpush_V2_1.so => daXiangCe/src/main/jniLibs/armeabi/libbdpush_V2_1.so
+* libs/armeabi/libgif.so => daXiangCe/src/main/jniLibs/armeabi/libgif.so
+* libs/baidumapapi_v2_4_2.jar => daXiangCe/libs/baidumapapi_v2_4_2.jar
+* libs/fastjson-1.1.21.jar => daXiangCe/libs/fastjson-1.1.21.jar
+* libs/httpclientlib-4.2.1.jar => daXiangCe/libs/httpclientlib-4.2.1.jar
+* libs/libammsdk.jar => daXiangCe/libs/libammsdk.jar
+* libs/mips/libbdpush_V2_1.so => daXiangCe/src/main/jniLibs/mips/libbdpush_V2_1.so
+* libs/mta-sdk-1.6.2.jar => daXiangCe/libs/mta-sdk-1.6.2.jar
+* libs/open_sdk_r4346.jar => daXiangCe/libs/open_sdk_r4346.jar
+* libs/pushservice-4.1.0.jar => daXiangCe/libs/pushservice-4.1.0.jar
+* libs/weibosdkcore_2.5.0.jar => daXiangCe/libs/weibosdkcore_2.5.0.jar
+* lint.xml => daXiangCe/lint.xml
+* res/ => daXiangCe/src/main/res/
+* src/ => daXiangCe/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

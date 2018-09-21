@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <!-- Left Icon -->
+
+    <ImageView
+        android:id="@+id/iv_left_icon_perference"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="@dimen/preference_padding"
+        android:contentDescription="@string/blank"
+        android:visibility="gone" />
+
+    <!-- TITLE -->
+
+    <TextView
+        android:id="@+id/tv_title_perference"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="left|center_vertical"
+        android:singleLine="true"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:id="@+id/tv_little_title_perference"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="left|center_vertical"
+        android:maxLength="25"
+        android:singleLine="true"
+        android:textSize="@dimen/text_size_small" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingRight="30dp">
+
+        <!-- content -->
+
+        <com.daxiangce123.android.ui.view.TextViewParserEmoji
+            android:id="@+id/tv_content_perference"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/blank"
+            android:ellipsize="end"
+            android:gravity="center_vertical|right"
+            android:singleLine="true"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_normal" />
+        <!-- ICON -->
+
+        <ImageView
+            android:id="@+id/iv_icon_preference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/blank"
+            android:scaleType="centerCrop" />
+    </LinearLayout>
+
+    <!-- VIEWS AT RIGHT -->
+
+    <RelativeLayout
+        android:id="@+id/rl_right_preference"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="-30dp"
+        android:visibility="gone">
+
+        <!-- ICON MORE -->
+
+        <ImageView
+            android:id="@+id/iv_more_preference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/blank"
+            android:src="@drawable/arrow_more_right"
+            android:visibility="gone" />
+
+        <!-- CHECKBOX -->
+
+        <CheckBox
+            android:id="@+id/cb_preference"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <!-- CONTENT -->
+
+    </RelativeLayout>
+
+</LinearLayout>

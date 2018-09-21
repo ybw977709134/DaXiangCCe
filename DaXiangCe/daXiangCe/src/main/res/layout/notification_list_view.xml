@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height">
+
+        <TextView
+            android:id="@+id/tv_title_notification_center"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/notification_center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_title" />
+
+        <TextView
+            android:id="@+id/tv_clear"
+            android:layout_width="80dp"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="@string/clear"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_major"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/lv_notification_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@color/transparent"
+            android:divider="@color/transparent"
+            android:dividerHeight="0dp"
+            android:fadeScrollbars="true"
+            android:listSelector="@drawable/list_selector"
+            android:overScrollMode="never"
+            android:scrollbars="vertical" />
+
+        <LinearLayout
+            android:id="@+id/v_empty_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableTop="@drawable/no_notification"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:singleLine="true"
+                android:text="@string/no_notification"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</LinearLayout>

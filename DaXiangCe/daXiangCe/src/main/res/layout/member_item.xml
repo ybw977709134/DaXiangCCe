@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/preference_margin_rl"
+    android:paddingRight="@dimen/preference_margin_rl"
+    android:paddingTop="@dimen/member_padding_bottom">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/member_padding_bottom">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.daxiangce123.android.ui.view.ImageViewEx
+                android:id="@+id/member_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/bottom_right_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@id/member_icon"
+                android:contentDescription="@string/blank"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <com.daxiangce123.android.ui.view.TextViewParserEmoji
+            android:id="@+id/tv_member_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:textColor="#1a1a1a"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/friend_view_invite"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/btn_friend_view"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/divider" />
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/preference_padding_bt"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="@dimen/preference_padding_bt" >
+
+    <!-- User Icon -->
+
+    <com.daxiangce123.android.ui.view.ImageViewEx
+        android:id="@+id/iv_notification_avater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/blank"
+        android:scaleType="centerCrop" />
+
+    <!-- Notification Detail -->
+
+    <LinearLayout
+        android:id="@+id/ll_notification_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <!-- Notification User Name -->
+
+        <com.daxiangce123.android.ui.view.TextViewParserEmoji
+            android:id="@+id/tv_notification_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal"
+            android:textStyle="bold" />
+
+        <!-- Notification Info -->
+
+        <TextView
+            android:id="@+id/tv_message_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            android:textColor="@color/grey"
+            android:autoText="true"
+            android:textSize="@dimen/text_size_little" />
+        <!-- Notification Time -->
+
+        <TextView
+            android:id="@+id/tv_notification_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_tiny" />
+    </LinearLayout>
+
+    <!-- Notification Photo -->
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white" >
+
+        <com.daxiangce123.android.ui.view.ImageViewEx
+            android:id="@+id/iv_notification_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp" />
+    </FrameLayout>
+
+</LinearLayout>

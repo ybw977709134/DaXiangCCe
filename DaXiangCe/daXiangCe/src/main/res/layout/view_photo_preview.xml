@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- <com.daxiangce123.android.ui.view.ZoomImageView3rd -->
+
+    <com.daxiangce123.android.ui.view.ZoomImageView
+        android:id="@+id/ziv_photo_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/iv_photo_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       />
+
+    <ImageView
+        android:id="@+id/iv_video_overlay"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/blank"
+        android:scaleType="centerInside"
+        android:src="@drawable/video_overlay" />
+
+    <!-- loading a picture/thumbNail -->
+
+    <LinearLayout
+        android:id="@+id/ll_loading"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <!-- progress -->
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:indeterminateDrawable="@drawable/loading" />
+
+        <!-- loading text -->
+
+        <TextView
+            android:id="@+id/tv_msg_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="middle"
+            android:gravity="center"
+            android:shadowColor="@color/black"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="5"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

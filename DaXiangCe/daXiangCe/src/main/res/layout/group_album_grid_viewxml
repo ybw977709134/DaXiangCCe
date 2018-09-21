@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- title bar -->
+
+    <LinearLayout
+        android:id="@+id/title_album_page"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height" >
+
+            <!-- normal title -->
+
+            <RelativeLayout
+                android:id="@+id/title_album_page"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_bar_height" >
+
+                <!-- left title button -->
+
+                <ImageView
+                    android:id="@+id/iv_title_sort"
+                    android:layout_width="@dimen/title_bar_height"
+                    android:layout_height="@dimen/title_bar_height"
+                    android:layout_alignParentLeft="true"
+                    android:contentDescription="@string/blank"
+                    android:scaleType="center"
+                    android:src="@drawable/sort_bg" />
+                <!-- title text -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <!-- right title button -->
+
+                <ImageView
+                    android:id="@+id/iv_show_search"
+                    android:layout_width="@dimen/title_bar_height"
+                    android:layout_height="@dimen/title_bar_height"
+                    android:layout_alignParentRight="true"
+                    android:contentDescription="@string/blank"
+                    android:scaleType="center"
+                    android:src="@drawable/search" />
+            </RelativeLayout>
+
+            <!-- search bar -->
+
+            <LinearLayout
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:visibility="gone" >
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_bar_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="5dp" >
+
+                    <!-- result count -->
+
+                    <TextView
+                        android:id="@+id/iv_search_result_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right|center_vertical"
+                        android:paddingRight="35dp"
+                        android:textColor="@color/search_bar_result_count_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <!-- search_icon -->
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/blank"
+                            android:scaleType="center"
+                            android:src="@drawable/search_bar_icon" />
+
+                        <!-- input box -->
+
+                        <EditText
+                            android:id="@+id/et_search_input"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:hint="@string/search_album"
+                            android:padding="0dp"
+                            android:singleLine="true" />
+
+                        <!-- clear inputs -->
+
+                        <ImageView
+                            android:id="@+id/iv_search_clear"
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/blank"
+                            android:scaleType="center"
+                            android:src="@drawable/edit_clear" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- search btn -->
+
+                <TextView
+                    android:id="@+id/tv_search_it"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="7dp"
+                    android:text="@string/search"
+                    android:textColor="@color/clickable_blue"
+                    android:textSize="@dimen/text_size_major"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- contents -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- results listview -->
+
+        <com.daxiangce123.android.ui.view.PullToRefreshBanner
+            android:id="@+id/gv_group_album_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </com.daxiangce123.android.ui.view.PullToRefreshBanner>
+
+        <!-- empty View -->
+
+        <LinearLayout
+            android:id="@+id/v_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="100dp"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/blank"
+                android:scaleType="center"
+                android:src="@drawable/search_no_result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:singleLine="true"
+                android:text="@string/no_result_found"
+                android:textColor="@color/clickable_black"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

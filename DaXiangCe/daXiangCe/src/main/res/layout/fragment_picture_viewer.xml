@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- image viewer viewpager / android.support.v4.view.ViewPager -->
+
+    <com.daxiangce123.android.ui.view.CViewPager
+        android:id="@+id/vp_container_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/dark" />
+
+    <LinearLayout
+        android:id="@+id/ll_topbar_picture_viewer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- title -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="#55000000">
+
+            <!-- back -->
+
+            <ImageView
+                android:id="@id/back"
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="@dimen/title_bar_height"
+                android:contentDescription="@string/blank"
+                android:scaleType="center"
+                android:src="@drawable/back_white" />
+
+            <!--
+                 <TextView
+                android:id="@id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableRight="@drawable/back_white"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+            -->
+
+
+            <!-- avater -->
+
+            <ImageView
+                android:id="@+id/iv_avater_picture_viewers"
+                android:layout_width="@dimen/user_guide_btn_height"
+                android:layout_height="@dimen/user_guide_btn_height"
+                android:layout_gravity="center"
+                android:padding="1dp"
+                android:background="@color/white"
+                android:contentDescription="@string/blank"
+                android:scaleType="centerCrop" />
+
+            <!-- title/subtitle -->
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp">
+
+                    <com.daxiangce123.android.ui.view.TextViewParserEmoji
+                        android:id="@+id/tv_title_picture_viewers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/clickable_white"
+                        android:textSize="@dimen/text_size_major"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_subtitle_picture_viewers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/clickable_white"
+                        android:textSize="@dimen/text_size_small" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- options button -->
+
+            <ImageView
+                android:id="@+id/iv_option_picture"
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="@dimen/title_bar_height"
+                android:contentDescription="@string/blank"
+                android:scaleType="center"
+                android:src="@drawable/bottom_more_bg" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- bottom bar -->
+
+        <LinearLayout
+            android:id="@+id/ll_bottom_panel_picture"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="#55000000"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <!-- likes -->
+
+            <RelativeLayout
+                android:id="@+id/rl_likes_picture"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_likes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/blank"
+                    android:scaleType="center"
+                    android:src="@drawable/preview_likes" />
+
+                <TextView
+                    android:id="@+id/tv_likes_num_picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_likes"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="-20dp"
+                    android:layout_toRightOf="@id/iv_likes"
+                    android:textColor="@color/clickable_white"
+                    android:textSize="@dimen/text_size_tiny" />
+            </RelativeLayout>
+
+            <!-- comments -->
+
+            <RelativeLayout
+                android:id="@+id/rl_comments_picture"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/comments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/preview_comments"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tv_comments_num_picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/comments"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="-20dp"
+                    android:layout_toRightOf="@id/comments"
+                    android:textColor="@color/clickable_white"
+                    android:textSize="@dimen/text_size_tiny" />
+            </RelativeLayout>
+
+            <!-- share -->
+
+            <RelativeLayout
+                android:id="@+id/rl_share_picture"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_share_picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/blank"
+                    android:scaleType="center"
+                    android:src="@drawable/preview_share" />
+
+                <TextView
+                    android:id="@+id/tv_shares_num_picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_share_picture"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="-20dp"
+                    android:layout_toRightOf="@id/iv_share_picture"
+                    android:textColor="@color/clickable_white"
+                    android:textSize="@dimen/text_size_tiny" />
+            </RelativeLayout>
+
+            <!-- download -->
+
+            <RelativeLayout
+                android:id="@+id/rl_download_picture"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_download_picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/blank"
+                    android:scaleType="center"
+                    android:src="@drawable/preview_download" />
+
+                <TextView
+                    android:id="@+id/tv_downloads_num_picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_download_picture"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="-20dp"
+                    android:layout_toRightOf="@id/iv_download_picture"
+                    android:textColor="@color/clickable_white"
+                    android:textSize="@dimen/text_size_tiny" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_picture_viewer_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A0000000"
+        android:visibility="gone" />
+
+</FrameLayout>

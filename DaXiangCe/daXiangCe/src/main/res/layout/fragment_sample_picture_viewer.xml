@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- image viewer viewpager / android.support.v4.view.ViewPager -->
+
+    <com.daxiangce123.android.ui.view.CViewPager
+        android:id="@+id/vp_container_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/dark" />
+
+</FrameLayout>

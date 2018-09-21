@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e6efeff4"
+    android:orientation="vertical"
+    android:paddingTop="10dp" >
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#767676"
+        android:textSize="@dimen/text_size_major" />
+
+    <ListView
+        android:id="@+id/lv_sort_image_popup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@null"
+        android:listSelector="@color/transparent"
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp" />
+
+    <LinearLayout
+        android:id="@+id/iv_cancel"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:gravity="center" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@drawable/add_album_blue_bg"
+            android:contentDescription="@string/blank"
+            android:gravity="center"
+            android:src="@drawable/add_album_cancle" />
+    </LinearLayout>
+
+</LinearLayout>

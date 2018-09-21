@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:groubum="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/create_album"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- title -->
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_title" />
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/preference_margin_rl"
+            android:background="@drawable/back_bg"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_complete"
+            android:layout_width="80dp"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_major" />
+    </RelativeLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_album_basis_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- album name -->
+
+                <LinearLayout
+                    android:id="@+id/ll_album_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_album_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/preference_height"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/preference_padding"
+                        android:text="@string/album_name"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <include layout="@layout/layout_divider" />
+                </LinearLayout>
+
+                <!-- input album name -->
+
+                <EditText
+                    android:id="@+id/et_album_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:hint="@string/album_name"
+                    android:maxLength="50"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="@dimen/preference_padding"
+                    android:paddingTop="10dp" />
+
+                <include layout="@layout/layout_divider" />
+
+                <!-- Album Description -->
+
+                <TextView
+                    android:id="@+id/tv_album_description"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/preference_height"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/preference_padding"
+                    android:text="@string/album_description"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_small" />
+
+                <include layout="@layout/layout_divider" />
+
+                <!-- input album Description -->
+
+                <EditText
+                    android:id="@+id/et_album_description"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:hint="@string/album_description"
+                    android:maxLength="140"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="@dimen/preference_padding"
+                    android:paddingTop="10dp" />
+
+                <include layout="@layout/layout_divider" />
+
+                <!-- private album -->
+
+                <com.daxiangce123.android.ui.view.Preference
+                    android:id="@+id/pf_private_album"
+                    style="@style/preference_style"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/item_bg"
+                    groubum:hasCheck="true"
+                    groubum:title="@string/private_album"
+                    groubum:topLineHeight="1dp" />
+
+                <!-- private album description -->
+
+                <TextView
+                    android:id="@+id/tv_private_album_discription"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/access_control_height"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/preference_padding"
+                    android:text="@string/private_album_discription"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_small" />
+
+                <!-- access contorl -->
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/access_control_height"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/preference_padding"
+                    android:text="@string/access_control"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_small" />
+
+                <com.daxiangce123.android.ui.view.Preference
+                    android:id="@+id/pf_senior_management"
+                    style="@style/preference_style"
+                    android:background="@drawable/item_bg"
+                    groubum:hasCheck="true"
+                    groubum:title="@string/senior_management"
+                    groubum:topLineHeight="1dp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_permission_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <!-- album password -->
+
+                    <com.daxiangce123.android.ui.view.Preference
+                        android:id="@+id/pf_album_password"
+                        style="@style/preference_style"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/item_bg"
+                        groubum:hasCheck="true"
+                        groubum:title="@string/album_password"
+                        groubum:topLineHeight="1dp" />
+
+                    <!-- input album password -->
+
+                    <EditText
+                        android:id="@+id/et_album_password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/preference_height"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:hint="@string/album_password"
+                        android:maxLength="16"
+                        android:paddingLeft="@dimen/preference_padding"
+                        android:visibility="gone" />
+
+                    <include layout="@layout/layout_divider" />
+
+                    <!-- set comment -->
+
+                    <com.daxiangce123.android.ui.view.Preference
+                        android:id="@+id/pf_comment_file"
+                        style="@style/preference_style"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/item_bg"
+                        groubum:bottomMarginLeft="@dimen/preference_padding"
+                        groubum:hasCheck="true"
+                        groubum:title="@string/comment_file"
+                        groubum:topLineHeight="1dp" />
+
+                    <!-- set like -->
+
+                    <com.daxiangce123.android.ui.view.Preference
+                        android:id="@+id/pf_like_file"
+                        style="@style/preference_style"
+                        android:background="@drawable/item_bg"
+                        groubum:bottomMarginLeft="@dimen/preference_padding"
+                        groubum:hasCheck="true"
+                        groubum:title="@string/like_file" />
+
+                    <!-- set upload -->
+
+                    <com.daxiangce123.android.ui.view.Preference
+                        android:id="@+id/pf_member_upload_file"
+                        style="@style/preference_style"
+                        android:background="@drawable/item_bg"
+                        groubum:bottomMarginLeft="@dimen/preference_padding"
+                        groubum:hasCheck="true"
+                        groubum:title="@string/member_upload_file" />
+
+                    <!-- set join album -->
+
+                    <com.daxiangce123.android.ui.view.Preference
+                        android:id="@+id/pf_allow_join_album"
+                        style="@style/preference_style"
+                        android:background="@drawable/item_bg"
+                        groubum:hasCheck="true"
+                        groubum:title="@string/allow_join_album" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_album_action_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- set push -->
+
+                <com.daxiangce123.android.ui.view.Preference
+                    android:id="@+id/pf_push_notification"
+                    style="@style/preference_style"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/item_bg"
+                    groubum:hasCheck="true"
+                    groubum:title="@string/push_notification"
+                    groubum:topLineHeight="1dp" />
+
+                <!-- push description -->
+
+                <TextView
+                    android:id="@+id/tv_push_notification"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/preference_height"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/preference_padding"
+                    android:text="@string/push_notification_discription"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_small" />
+
+                <!-- transfer owner -->
+
+                <TextView
+                    android:id="@+id/pf_transfer_owner"
+                    style="@style/preference_style"
+                    android:background="@drawable/item_bg"
+                    android:gravity="center"
+                    android:text="@string/transfer_owner"
+                    android:textColor="#FF000000" />
+
+                <!-- quit album -->
+
+                <TextView
+                    android:id="@+id/pf_quit_album"
+                    style="@style/preference_style"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/item_bg"
+                    android:gravity="center"
+                    android:text="@string/quit_album"
+                    android:textColor="#FF000000" />
+
+                <!-- report album -->
+
+                <TextView
+                    android:id="@+id/pf_report_album"
+                    style="@style/preference_style"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/item_bg"
+                    android:gravity="center"
+                    android:text="@string/report_album"
+                    android:textColor="#FF000000" />
+
+
+                <!-- delete album -->
+
+                <TextView
+                    android:id="@+id/pf_delete_album"
+                    style="@style/preference_style"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/item_bg"
+                    android:gravity="center"
+                    android:text="@string/delete_album"
+                    android:textColor="#FFFF0000" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

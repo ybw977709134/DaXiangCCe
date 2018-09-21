@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/grid_view_item_padding_top"
+    android:paddingLeft="@dimen/preference_padding"
+    android:paddingRight="@dimen/preference_padding"
+    android:paddingTop="@dimen/grid_view_item_padding_top">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+
+            <com.daxiangce123.android.ui.view.ImageViewEx
+                android:id="@+id/comment_user_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/blank"
+                android:padding="@dimen/image_rim_width"
+                android:scaleType="centerCrop" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/notification_message_padding"
+        android:paddingLeft="@dimen/preference_margin_rl"
+        android:paddingTop="@dimen/notification_message_padding">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+
+            <!-- username -->
+
+            <com.daxiangce123.android.ui.view.TextViewParserEmoji
+                android:id="@+id/comment_user_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:singleLine="true"
+                android:textColor="@color/clickable_black"
+                android:textSize="@dimen/text_size_major" />
+
+            <!-- date -->
+            <TextView
+                android:id="@+id/comment_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:singleLine="true"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- comment -->
+
+            <com.daxiangce123.android.ui.view.TextViewFixTouchConsume
+                android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_size_small" />
+
+            <!-- FileImage -->
+
+            <LinearLayout
+                android:id="@+id/fl_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/album_item_name_padding_rl"
+                android:layout_marginTop="@dimen/album_item_name_padding_rl"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/image_rim_width">
+
+                    <com.daxiangce123.android.ui.view.ImageViewEx
+                        android:id="@+id/iv_file"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/default_image_small"
+                        android:scaleType="fitCenter" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

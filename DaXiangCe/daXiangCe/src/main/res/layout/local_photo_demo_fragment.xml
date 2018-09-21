@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout
+        android:id="@+id/title_panel"
+        android:layout_height="50dip"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="@color/grey" >
+        
+        <Button
+            android:id="@+id/cancel"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:text="cancel" />
+        
+        <TextView
+            android:id="@+id/title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Local Photos" />
+        
+        <Button
+            android:id="@+id/choose"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:text="choose" />
+                
+    </RelativeLayout>
+
+    
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/title_panel"
+        android:layout_centerHorizontal="true"
+        android:listSelector="@null"
+        android:numColumns="3"
+        android:horizontalSpacing="2dip"
+        android:verticalSpacing="2dip"
+        android:background="#000000"
+      	android:scrollbars="none" />
+
+</RelativeLayout>

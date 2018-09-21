@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <!-- cover -->
+
+    <RelativeLayout
+        android:id="@+id/rl_album_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- imageview -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:background="@color/white" >
+
+            <com.daxiangce123.android.ui.view.ImageViewEx
+                android:id="@+id/iv_album_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_margin="3dp"
+                android:contentDescription="@string/blank"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
+        <!-- notification -->
+
+        <TextView
+            android:id="@+id/tv_top_right_corner_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/new_photo_bg"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_major" />
+
+        <!-- info -->
+
+        <LinearLayout
+            android:id="@+id/ll_album_item_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="3dp"
+            android:paddingRight="5dp" >
+
+            <TextView
+                android:id="@+id/tv_photo_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/notification_message_padding"
+                android:drawableLeft="@drawable/photo_number_bg"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small" />
+
+            <TextView
+                android:id="@+id/tv_member_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/member_number_bg"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+
+        <!-- delete -->
+
+        <TextView
+            android:id="@+id/tv_bottom_right_corner_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/circle_delete_member" />
+    </RelativeLayout>
+
+    <!-- name -->
+
+    <com.daxiangce123.android.ui.view.TextViewParserEmoji
+        android:id="@+id/tv_album_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:background="@drawable/album_item_name_corners_bg"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/clickable_black"
+        android:textSize="@dimen/text_size_major" />
+
+</LinearLayout>

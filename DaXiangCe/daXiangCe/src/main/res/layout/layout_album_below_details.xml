@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/below_title_bottom_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="12dp">
+
+    <!-- up     android:paddingBottom="10dp" -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_member_avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+
+            android:gravity="center">
+
+            <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--android:id="@+id/cv_member_avatar"-->
+            <!--android:layout_width="58dp"-->
+            <!--android:layout_height="58dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--groubum:border_color="#FFFFFFFF"-->
+            <!--groubum:border_width="3dp" />-->
+
+            <ImageView
+                android:id="@+id/cv_member_avatar"
+                android:layout_width="59dp"
+                android:layout_height="59dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="false"
+                android:scaleType="centerCrop" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/ll_member_avatar"
+            android:orientation="vertical"
+            android:paddingLeft="8dp">
+
+            <com.daxiangce123.android.ui.view.TextViewParserEmoji
+                android:id="@+id/tv_owner_name"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gray_small_file"
+                    android:contentDescription="@string/blank" />
+
+                <TextView
+                    android:id="@+id/album_title_file"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textSize="@dimen/text_size_tiny" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gray_small_people"
+                    android:contentDescription="@string/blank" />
+
+                <TextView
+                    android:id="@+id/album_title_people"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textSize="@dimen/text_size_tiny" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gray_small_view"
+                    android:contentDescription="@string/blank" />
+
+                <TextView
+                    android:id="@+id/album_title_views"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textSize="@dimen/text_size_tiny" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shares_bg"
+                    android:contentDescription="@string/blank" />
+
+                <TextView
+                    android:id="@+id/album_title_shares"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textSize="@dimen/text_size_tiny" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- down -->
+
+    <LinearLayout
+        android:id="@+id/ll_album_details_description_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/album_description"
+        android:visibility="gone">
+
+        <com.daxiangce123.android.ui.view.ExpandableTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ept_album_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            expandableTextView:animDuration="200"
+            expandableTextView:maxCollapsedLines="2">
+
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal" />
+
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent"
+                android:scaleType="center"
+                android:src="@drawable/ic_expand_small_holo_light" />
+        </com.daxiangce123.android.ui.view.ExpandableTextView>
+    </LinearLayout>
+
+</LinearLayout>

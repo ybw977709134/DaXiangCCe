@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <solid android:color="@color/bullet_bg" />
+
+    <corners
+        android:bottomLeftRadius="@dimen/coner_bullet_rl"
+        android:bottomRightRadius="@dimen/coner_bullet_rl"
+        android:topLeftRadius="@dimen/coner_bullet_rl"
+        android:topRightRadius="@dimen/coner_bullet_rl" />
+
+</shape>

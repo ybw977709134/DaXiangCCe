@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.daxiangce123.android.ui.view.CViewPager
+        android:id="@+id/vp_container_picture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark" />
+
+    <LinearLayout
+        android:id="@+id/ll_topbar_picture_viewer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_marginBottom="-1dp"
+            android:background="#55000000" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:text="@string/choose_photo"
+                android:textColor="@color/bg"
+                android:textSize="@dimen/text_size_title" />
+
+            <CheckBox
+                android:id="@+id/selected_local_image_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:button="@drawable/common_select_bg"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:id="@+id/ll_bottom_panel_picture"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="#55000000" >
+
+            <CheckBox
+                android:id="@+id/cb_original_local_image_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:button="@drawable/common_select_bg" />
+
+            <TextView
+                android:id="@+id/tv_filesize_local_image_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/cb_original_local_image_detail"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:text="@string/original_photo"
+                android:textColor="@color/white_pressed"
+                android:textSize="@dimen/text_size_title" />
+
+            <TextView
+                android:id="@+id/confirm_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/clickable_blue_with_cornor"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:singleLine="true"
+                android:text="@string/upload"
+                android:textColor="@color/clickable_black"
+                android:textSize="@dimen/text_size_title" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

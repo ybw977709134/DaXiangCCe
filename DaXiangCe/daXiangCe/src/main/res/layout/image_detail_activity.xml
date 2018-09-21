@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    
+    <RelativeLayout 
+        android:id="@+id/title_panel"
+        android:layout_height="50dip"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:alpha="50" >
+        
+        <Button
+            android:id="@+id/back"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dip"
+            android:text="back" />
+         <Button
+            android:id="@+id/delete"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+            android:text="delete" />
+         
+    </RelativeLayout>
+    
+
+</RelativeLayout>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:groubum="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title_profile"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:gravity="center"
+            android:text="@string/profile"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_title" />
+
+        <ImageView
+            android:id="@+id/iv_add_firend"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/add_firend" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_user_info"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.daxiangce123.android.ui.view.Preference
+                        android:id="@+id/pf_user_icon"
+                        style="@style/preference_style"
+                        android:background="@drawable/item_bg"
+                        groubum:bottomMarginLeft="@dimen/preference_padding"
+                        groubum:hasMore="true"
+                        groubum:icon="@drawable/ic_launcher"
+                        groubum:title="@string/user_icon"
+                        groubum:topLineHeight="1dp" />
+
+                    <com.daxiangce123.android.ui.view.Preference
+                        android:id="@+id/pf_user_name"
+                        style="@style/preference_style"
+                        android:background="@drawable/item_bg"
+                        groubum:content="name"
+                        groubum:hasMore="true"
+                        groubum:title="@string/user_name" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_not_login"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/item_bg"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/layout_divider" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="68dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/blank"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/contact_avatar" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/click_login"
+                        android:textSize="@dimen/text_size_major" />
+
+                    <include layout="@layout/layout_divider" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_account_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.daxiangce123.android.ui.view.Preference
+                    android:id="@+id/pf_mobile"
+                    style="@style/preference_style"
+                    android:layout_marginTop="@dimen/preference_margin_top"
+                    android:background="@drawable/item_bg"
+                    groubum:bottomMarginLeft="@dimen/preference_padding"
+                    groubum:content="@string/binding"
+                    groubum:contentColor="@color/grey"
+                    groubum:hasMore="true"
+                    groubum:title="@string/phone_number"
+                    groubum:topLineHeight="1dp" />
+
+                <com.daxiangce123.android.ui.view.Preference
+                    android:id="@+id/pf_account_password"
+                    style="@style/preference_style"
+                    android:background="@drawable/item_bg"
+                    groubum:content="@string/modify"
+                    groubum:hasMore="true"
+                    groubum:title="@string/account_password" />
+
+                <com.daxiangce123.android.ui.view.Preference
+                    android:id="@+id/pf_wechat"
+                    style="@style/preference_style"
+                    android:background="@drawable/item_bg"
+                    groubum:bottomMarginLeft="@dimen/preference_padding"
+                    groubum:content="@string/binding"
+                    groubum:hasMore="true"
+                    groubum:title="@string/wechat" />
+
+                <com.daxiangce123.android.ui.view.Preference
+                    android:id="@+id/pf_weibo"
+                    style="@style/preference_style"
+                    android:background="@drawable/item_bg"
+                    groubum:bottomMarginLeft="@dimen/preference_padding"
+                    groubum:content="@string/binding"
+                    groubum:hasMore="true"
+                    groubum:title="@string/sina_weibo" />
+
+                <com.daxiangce123.android.ui.view.Preference
+                    android:id="@+id/pf_qq"
+                    style="@style/preference_style"
+                    android:background="@drawable/item_bg"
+                    groubum:content="@string/binding"
+                    groubum:hasMore="true"
+                    groubum:title="@string/qq" />
+            </LinearLayout>
+
+            <com.daxiangce123.android.ui.view.Preference
+                android:id="@+id/pf_pwd"
+                style="@style/preference_style"
+                android:layout_marginTop="@dimen/preference_margin_top"
+                android:background="@drawable/item_bg"
+                groubum:bottomMarginLeft="@dimen/preference_padding"
+                groubum:content="@string/close"
+                groubum:hasMore="true"
+                groubum:title="@string/pwd_lock"
+                groubum:topLineHeight="1dp" />
+
+            <com.daxiangce123.android.ui.view.Preference
+                android:id="@+id/pf_bullet"
+                style="@style/preference_style"
+                android:background="@drawable/item_bg"
+                groubum:bottomMarginLeft="@dimen/preference_padding"
+                groubum:hasCheck="true"
+                groubum:title="@string/bullet" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="51dp"
+                android:background="@drawable/item_bg"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/rl_clear_cache"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/preference_height"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/preference_padding"
+                    android:paddingRight="@dimen/preference_padding">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:singleLine="true"
+                        android:text="@string/clear_cache"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <TextView
+                        android:id="@+id/tv_cache_size"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|right"
+                        android:singleLine="true"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_size_normal" />
+                </LinearLayout>
+
+                <include layout="@layout/layout_divider" />
+            </LinearLayout>
+
+            <com.daxiangce123.android.ui.view.Preference
+                android:id="@+id/pf_feedback"
+                style="@style/preference_style"
+                android:layout_marginTop="@dimen/preference_margin_top"
+                android:background="@drawable/item_bg"
+                groubum:bottomMarginLeft="@dimen/preference_padding"
+                groubum:title="@string/service_and_feedback"
+                groubum:topLineHeight="1dp" />
+
+            <com.daxiangce123.android.ui.view.Preference
+                android:id="@+id/pf_recommended_apps"
+                style="@style/preference_style"
+                android:background="@drawable/item_bg"
+                android:visibility="gone"
+                groubum:bottomMarginLeft="@dimen/preference_padding"
+                groubum:title="@string/recommended_apps" />
+
+            <com.daxiangce123.android.ui.view.Preference
+                android:id="@+id/pf_about_us"
+                style="@style/preference_style"
+                android:background="@drawable/item_bg"
+                groubum:title="@string/about_us" />
+
+            <Button
+                android:id="@+id/bt_logout"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/preference_height"
+                android:layout_marginBottom="@dimen/preference_margin_top"
+                android:layout_marginLeft="@dimen/preference_padding"
+                android:layout_marginRight="@dimen/preference_padding"
+                android:layout_marginTop="@dimen/preference_margin_top"
+                android:background="@drawable/add_album_option_blue"
+                android:gravity="center"
+                android:text="@string/logout"
+                android:textColor="@color/clickable_blue_white"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

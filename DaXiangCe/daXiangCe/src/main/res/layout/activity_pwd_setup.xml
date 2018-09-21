@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:groubum="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+    <!-- title -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_alignParentLeft="true"
+            android:contentDescription="@string/blank"
+            android:scaleType="center"
+            android:src="@drawable/back_bg" />
+
+        <TextView
+            android:id="@+id/tv_title_about_us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/pwd_lock"
+            android:textSize="@dimen/text_size_title" />
+    </RelativeLayout>
+
+    <com.daxiangce123.android.ui.view.Preference
+        android:id="@+id/pf_on_off"
+        style="@style/preference_style"
+        android:background="@drawable/item_bg"
+        groubum:bottomMarginLeft="@dimen/preference_padding"
+        groubum:title="@string/passcode_turn_on"
+        groubum:topLineHeight="1dp" />
+
+    <com.daxiangce123.android.ui.view.Preference
+        android:id="@+id/pf_change"
+        style="@style/preference_style"
+        android:background="@drawable/item_bg"
+        groubum:title="@string/passcode_change_passcode" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:padding="@dimen/preference_margin_rl"
+        android:text="@string/input_10th_error_pwd_login_again"
+        android:textSize="@dimen/text_size_small" />
+
+</LinearLayout>

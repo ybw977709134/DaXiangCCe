@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:groubum="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- title -->
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/permission_set"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_title" />
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/preference_margin_rl"
+            android:background="@drawable/back_bg"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_complete"
+            android:layout_width="80dp"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="@string/complete"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_major" />
+    </RelativeLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <com.daxiangce123.android.ui.view.Preference
+        android:id="@+id/pf_allow_member_upload_file"
+        style="@style/preference_style"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/item_bg"
+        groubum:hasCheck="true"
+        groubum:title="@string/allow_member_upload_file"
+        groubum:topLineHeight="1dp" />
+
+</LinearLayout>

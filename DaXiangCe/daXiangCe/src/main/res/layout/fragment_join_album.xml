@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- title -->
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/join_ablum"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_title" />
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/preference_margin_rl"
+            android:background="@drawable/back_bg"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <EditText
+        android:id="@+id/input_invite_code"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="@dimen/join_album_margin"
+        android:layout_marginRight="@dimen/join_album_margin"
+        android:layout_marginTop="@dimen/preference_padding"
+        android:background="@color/white"
+        android:hint="@string/pls_input_album_invite_code"
+        android:paddingLeft="@dimen/preference_padding" />
+
+    <Button
+        android:id="@+id/bt_join_album"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/preference_height"
+        android:layout_margin="@dimen/preference_padding"
+        android:background="@drawable/clickalbe_get_verification_code_grey_white_stroke"
+        android:gravity="center"
+        android:text="@string/join_ablum"
+        android:textColor="@color/clickable_blue_grey"
+        android:textSize="@dimen/text_size_normal" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginLeft="@dimen/preference_padding"
+        android:layout_marginRight="@dimen/preference_padding"
+        android:background="@color/divider" />
+
+    <ImageView
+        android:id="@+id/iv_scan_album_code"
+        android:layout_width="@dimen/bottom_bar_height"
+        android:layout_height="@dimen/bottom_bar_height"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/preference_padding"
+        android:contentDescription="@string/blank"
+        android:scaleType="centerInside"
+        android:src="@drawable/scan_album_code" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/scan_album_qr_join_album" />
+
+</LinearLayout>

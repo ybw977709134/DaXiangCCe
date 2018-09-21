@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="tv_title_bar" type="id">false</item>
+    <item name="tv_sub_title_bar" type="id">false</item>
+    <item name="btn_left_title_bar" type="id">false</item>
+    <item name="btn_right_title_bar" type="id">false</item>
+    <item name="title_bar" type="id">false</item>
+    <item name="bottom_bar" type="id">false</item>
+    <item name="btn_left_bottom_bar" type="id">false</item>
+    <item name="btn_right_bottom_bar" type="id">false</item>
+    <item name="btn_middle1_bottom_bar" type="id">false</item>
+    <item name="btn_middle2_bottom_bar" type="id">false</item>
+    <item name="fragment_content" type="id">false</item>
+    <item name="back" type="id">false</item>
+    <item name="iv_timeline_user_icon" type="id">false</item>
+    <item name="tv_timeline_time" type="id">false</item>
+    <item name="ll_time_avater" type="id">false</item>
+    <item name="user_guide_blink_btn_bg" type="id">false</item>
+    <item name="user_guide_blink_btn" type="id">false</item>
+    <item name="user_guide_detail_image" type="id">false</item>
+    <item name="expandable_text" type="id" />
+    <item name="expand_collapse" type="id" />
+    <item name="abb_sort" type="id">false</item>
+    <item name="abb_upload_join" type="id">false</item>
+    <item name="abb_share" type="id">false</item>
+    <item name="abb_delete" type="id">false</item>
+    <item name="tag_divider" type="id"></item>
+
+</resources>

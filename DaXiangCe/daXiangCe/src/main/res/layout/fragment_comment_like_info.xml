@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/file_detail_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_file_detaile_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <!-- Title Bar -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height" >
+
+            <!-- left title button -->
+
+            <RelativeLayout
+                android:id="@+id/rl_file_back"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true" >
+
+                <TextView
+                    android:id="@+id/file_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/preference_margin_rl"
+                    android:background="@drawable/back_bg"
+                    android:gravity="center" />
+            </RelativeLayout>
+
+            <!-- title text -->
+
+            <TextView
+                android:id="@+id/title_album_detail_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/detail"
+                android:textColor="#000000"
+                android:textSize="@dimen/text_size_large" />
+
+            <!-- right title button -->
+
+            <RelativeLayout
+                android:id="@+id/rl_file_delete"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" >
+
+                <TextView
+                    android:id="@+id/file_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/preference_margin_rl"
+                    android:background="@drawable/file_delete"
+                    android:gravity="center" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <include layout="@layout/layout_divider" />
+    </LinearLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/lv_comment_like"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/transparent"
+        android:dividerHeight="0dp"
+        android:listSelector="@drawable/list_selector"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <com.daxiangce123.android.ui.view.InputView
+        android:id="@+id/input_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</LinearLayout>

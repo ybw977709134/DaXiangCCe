@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey_light_pressed"
+    android:paddingBottom="@dimen/member_padding_bottom"
+    android:paddingLeft="@dimen/preference_margin_rl"
+    android:paddingRight="@dimen/preference_margin_rl"
+    android:paddingTop="@dimen/member_padding_bottom">
+
+    <TextView
+        android:id="@+id/tv_member_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/member_padding_bottom"
+        android:paddingTop="@dimen/member_padding_bottom"
+        android:singleLine="true"
+        android:textColor="@color/dark"
+        android:textSize="16sp" />
+
+</FrameLayout>

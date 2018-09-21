@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <!-- wexin parent -->
+
+    <RelativeLayout
+        android:id="@+id/wx"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/user_guide_btn_height"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/clickable_white_grey_with_stroke" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/weixin"
+            android:textColor="@color/clickable_wx_green"
+            android:textSize="@dimen/text_size_major" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/blank"
+            android:scaleType="centerInside"
+            android:src="@drawable/weixin" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/user_guide_btn_height"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal" >
+
+        <!-- qq parent -->
+
+        <RelativeLayout
+            android:id="@+id/qq"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/clickable_white_grey_with_stroke" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/qq"
+                android:textColor="@color/clickable_qq_blue"
+                android:textSize="@dimen/text_size_major" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:contentDescription="@string/blank"
+                android:scaleType="centerInside"
+                android:src="@drawable/qq" />
+        </RelativeLayout>
+
+        <!-- weibo parent -->
+
+        <RelativeLayout
+            android:id="@+id/weibo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/clickable_white_grey_with_stroke" >
+
+            <ImageView
+                android:id="@+id/iv_weibo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:contentDescription="@string/blank"
+                android:scaleType="centerInside"
+                android:src="@drawable/weibo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_weibo"
+                android:gravity="center"
+                android:text="@string/sina_weibo"
+                android:textColor="@color/clickable_weibo_red"
+                android:textSize="@dimen/text_size_major" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white" >
+
+    <com.daxiangce123.android.ui.view.ImageViewEx
+        android:id="@+id/iv_image_item"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="3dp"
+        android:contentDescription="@string/blank" />
+
+    <!-- album item  detail -->
+
+    <LinearLayout
+        android:id="@+id/rl_image_item_bottom_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="start"
+        android:paddingBottom="@dimen/album_item_name_padding_rl"
+        android:paddingLeft="@dimen/grid_view_item_padding_left" >
+
+        <!-- likes -->
+
+        <TextView
+            android:id="@+id/tv_like_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/gride_view_item_bottom_padding"
+            android:drawableLeft="@drawable/like_tiny"
+            android:paddingLeft="@dimen/gride_view_item_bottom_padding"
+            android:singleLine="true"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/text_size_small" />
+        <!-- comments -->
+
+        <TextView
+            android:id="@+id/tv_message_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/gride_view_item_bottom_padding"
+            android:drawableLeft="@drawable/message_bg"
+            android:paddingLeft="@dimen/gride_view_item_bottom_padding"
+            android:singleLine="true"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+
+    <!-- indicator -->
+
+    <ImageView
+        android:id="@+id/iv_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/blank"
+        android:scaleType="centerInside"
+        android:src="@drawable/video_overlay"
+        android:visibility="gone" />
+    <!-- select -->
+
+    <ImageView
+        android:id="@+id/tv_select"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/blank"
+        android:scaleType="center"
+        android:src="@drawable/tick"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_uploading"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#80000000"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:id="@+id/pb_uploading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

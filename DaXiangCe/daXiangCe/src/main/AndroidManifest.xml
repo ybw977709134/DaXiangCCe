@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.daxiangce123"
+    android:versionCode="251"
+    android:versionName="1.9.1">
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- for log. -->
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!--for receive message-->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.READ_SMS"></uses-permission>
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!--
+         Don't require camera, as this requires a rear camera. This allows it 
+		to work on the Nexus 7
+    -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.screen.landscape" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <!-- Donut-specific flags which allow us to run on any dpi screens. -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+    <!-- android:xlargeScreens="true" 2.3.1 does not support -->
+    <!-- FOR ZXING END -->
+
+    <application
+        android:name=".android.App"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <!-- wheather in DEBUG mode -->
+        <meta-data
+            android:name="DEBUG"
+            android:value="true" />
+
+        <service android:name="com.daxiangce123.android.EventService" />
+
+        <activity
+            android:name=".android.ui.activities.SplashActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:taskAffinity=".android.ui.activities.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="daxiangce" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".android.ui.activities.HomeActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:taskAffinity=".android.ui.activities.HomeActivity"
+            android:windowSoftInputMode="adjustPan|stateVisible|stateHidden"></activity>
+
+        <activity
+            android:name=".android.ui.activities.LocalImageActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.activities.ZXingActivity"
+            android:configChanges="orientation|screenSize" />
+
+        <!-- android:launchMode="singleTop" -->
+        <activity
+            android:name=".android.ui.activities.AlbumDetailActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.activities.SampleAlbumDetailActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.activities.LikedUserActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.activities.AccessActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.activities.UserDetailActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.activities.PhotoViewerActivity"
+            android:theme="@style/MyActionBarTheme"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.activities.InviteFriendsActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.activities.SamplePlayVideoActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.activities.LoginActivity"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity android:name=".android.ui.activities.AppLockActivity" />
+        <activity android:name=".android.ui.activities.PwdSetupActivity" />
+        <activity
+            android:name=".android.ui.activities.FriendActivity"
+            android:configChanges="orientation|screenSize" />
+
+        <!-- WECHAT -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:taskAffinity=".android.ui.activities.HomeActivity"
+            android:theme="@style/theme_notitle_translucent" />
+
+        <!-- FOR TEST BEG -->
+        <activity
+            android:name=".android.ui.test.TestActivity"
+            android:configChanges="orientation|screenSize"
+            android:taskAffinity=".android.ui.activities.HomeActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".android.ui.test.TestLoginActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.test.TestAlbumActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.test.TestFilesActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.test.TestZxingActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.test.TestCreatAlbum"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.test.VideoPlayerActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.test.TestDialogAcitivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.test.TestBitmapUtilsActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".android.ui.test.TestNotificationActivity"
+            android:configChanges="orientation|screenSize" />
+        <!-- FOR TEST END -->
+
+
+        <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!-- For 3rd Part -->
+        <!-- FOR UMENG BEG -->
+        <service
+            android:name="com.umeng.common.net.DownloadingService"
+            android:process=":DownloadingService"></service>
+
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5369cdba56240b535e00d9af" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+        <!-- FOR UMENG END -->
+
+        <!--For Tencent MTA-->
+        <meta-data
+            android:name="TA_APPKEY"
+            android:value="AJ27AN4L6HKD" />
+        　　
+        <meta-data
+            android:name="InstallChannel"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+
+
+        <!-- FOR QQ BEG -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- FOR QQ END -->
+
+
+        <!-- for FACEBOOK SDK BEG -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/fb_app_id" />
+
+        <!--<activity android:name="com.facebook.LoginActivity" />-->
+        <!-- for FACEBOOK SDK END -->
+
+
+        <!-- for BAIDU LOCATION BEG -->
+        <!--
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="CKTfsUZ4UhsOFAu9Y8RDnXDf" />
+        -->
+        <!-- for BAIDU LOCATION END -->
+
+
+        <!-- for baidu push BEG -->
+        <!-- push service start -->
+        <!-- 用于接收系统消息以保证 PushService 正常运行 -->
+        <receiver
+            android:name="com.baidu.android.pushservice.PushServiceReceiver"
+            android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
+                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
+            </intent-filter>
+        </receiver>
+        <!-- Push 服务接收客户端发送的各种请求 -->
+        <!--
+注意：RegistrationReceiver 在 2.1.1 及之前版本有拼写失误，为 RegistratonReceiver ，用
+新版本 SDK 时请更改为如下代码
+        -->
+        <receiver
+            android:name="com.baidu.android.pushservice.RegistrationReceiver"
+            android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.METHOD" />
+                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <!-- Push 服务 -->
+        <!-- 注意：在 4.0 (包含)之后的版本需加上如下所示的 intent-filter action -->
+        <service
+            android:name="com.baidu.android.pushservice.PushService"
+            android:exported="true"
+            android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE" />
+            </intent-filter>
+        </service>
+        <!-- push service end -->
+
+
+        <!-- push应用定义消息receiver声明 -->
+        <receiver android:name="com.daxiangce123.android.push.BaiduReceiver">
+            <intent-filter>
+
+                <!-- 接收push消息 -->
+                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+            </intent-filter>
+        </receiver>
+        <!-- for baidu push END -->
+
+        <receiver android:name=".android.push.AlarmReceiver">
+            <intent-filter>
+                <action android:name=".android.Consts.NOT_REGISTER" />
+                <action android:name=".android.Consts.ONE_DAY_NOT_LAUNCH" />
+                <action android:name=".android.Consts.TWO_DAYS_NOT_LAUNCH" />
+                <action android:name=".android.Consts.THREE_DAYS_NOT_LAUNCH" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

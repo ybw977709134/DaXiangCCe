@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/ll_top_views"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/user_guide_bg">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/blank"
+            android:scaleType="center"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/choose_country"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_title" />
+    </RelativeLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <ListView
+        android:id="@+id/lv_regions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_top_views"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@null"
+        android:listSelector="@drawable/list_selector"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+
+</RelativeLayout>

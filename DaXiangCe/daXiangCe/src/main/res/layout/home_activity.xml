@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <!-- bottom bar -->
+
+            <LinearLayout
+                android:id="@id/bottom_bar"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/bottom_bar_height"
+                android:layout_alignParentBottom="true"
+                android:background="#e6ffffff"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/bottom_bar_padding_rl"
+                android:paddingRight="@dimen/bottom_bar_padding_rl">
+
+                <!-- album -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_album"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/album"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/album_btn_bg"
+                        android:contentDescription="@string/blank"
+                        android:gravity="center" />
+                </RelativeLayout>
+
+                <!-- notification -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_notification"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/notification_btn_bg"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/notification_num"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_above="@id/notification"
+                        android:layout_marginBottom="-12dp"
+                        android:layout_marginLeft="-12dp"
+                        android:layout_toRightOf="@id/notification"
+                        android:gravity="center"
+                        android:textColor="@color/clickable_white" />
+                </RelativeLayout>
+
+                <!-- add album -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_add"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/add_album_blue_bg"
+                        android:contentDescription="@string/blank"
+                        android:gravity="center"
+                        android:src="@drawable/add_album_bg" />
+                </RelativeLayout>
+
+                <!-- local or search -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_local"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_local"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/tab_local"
+                        android:gravity="center" />
+                </RelativeLayout>
+                <!-- profile -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_me"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/me"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/profile_btn_bg"
+                        android:gravity="center" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- fragment content -->
+
+            <RelativeLayout
+                android:id="@id/fragment_content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@id/bottom_bar"
+                android:background="#f0f0f0"></RelativeLayout>
+        </RelativeLayout>
+
+        <!-- Mask -->
+        <!--
+        <LinearLayout
+            android:id="@+id/ll_mask"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/iv_mask"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="9"
+                android:scaleType="fitXY"
+                android:src="@drawable/found_mask_top" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:scaleType="centerCrop"
+                android:src="@drawable/found_mask_bootom" />
+        </LinearLayout>
+        -->
+
+
+        <!-- guide 1 -->
+
+        <LinearLayout
+            android:id="@+id/ll_user_guide1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#a6000000"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_user_guide_1" />
+        </LinearLayout>
+
+        <!-- guide 2 -->
+
+        <LinearLayout
+            android:id="@+id/ll_user_guide2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#a6000000"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_user_guide_2" />
+        </LinearLayout>
+
+        <!-- binding phone guide-->
+        <LinearLayout
+            android:id="@+id/ll_binding_phone_guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_binding_phone_guide" />
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>

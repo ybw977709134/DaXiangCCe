@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent" >
+ 
+     <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/grey"
+        android:alpha="0.5"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="4dp" >
+
+            <Button
+                android:id="@+id/close_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:alpha="1.0"
+                android:text="Back"/>
+
+            <TextView
+                android:id="@+id/tv_title_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="Your Album" />
+
+            <Button
+                android:id="@+id/gallery_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:alpha="1.0"
+               	android:text="Add" />
+        
+    </RelativeLayout>
+ 
+    
+    
+    <GridView 
+    	android:id="@+id/gridView"
+    	style="@style/PhotoGridLayout"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:layout_below="@id/title_bar"
+    	android:columnWidth="@dimen/image_thumbnail_size"
+    	android:horizontalSpacing="@dimen/image_thumbnail_spacing"
+    	android:numColumns="auto_fit"
+    	android:stretchMode="columnWidth"
+    	android:verticalSpacing="@dimen/image_thumbnail_spacing" >
+	</GridView>
+
+</RelativeLayout>

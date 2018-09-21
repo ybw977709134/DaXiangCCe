@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_tab_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#f0f0f0"
+        android:paddingBottom="@dimen/preference_padding_bt"
+        android:paddingTop="@dimen/preference_padding_bt" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/user_detail_corners_bg"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_showtimeline"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/files_in_album_corners_bg"
+                android:gravity="center"
+                android:text="@string/image"
+                android:textColor="#ff0794e1"
+                android:textSize="@dimen/text_size_normal" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_showmembers"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="@string/tab_members"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <ImageView
+                    android:id="@+id/tv_red_dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="100dp"
+                    android:src="@drawable/red_dot_bg"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_date_indexer"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/transparent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp" >
+
+        <LinearLayout
+            android:id="@+id/rl_header_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/date_daytime_indexer_heigth"
+                android:background="@drawable/timeline_corners"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:singleLine="true"
+                android:text="@string/today"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_normal" />
+
+            <ImageView
+                android:id="@+id/iv_day_indexer"
+                android:layout_width="@dimen/daytime_indexer_width"
+                android:layout_height="@dimen/daytime_indexer_width"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/day_corners"
+                android:contentDescription="@string/blank"
+                android:scaleType="centerInside"
+                android:src="@drawable/sun_bg" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_time_avater_outer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent" >
+
+        <!-- control to show avater&time or NOT -->
+
+        <LinearLayout
+            android:id="@id/ll_time_avater"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <!-- avater -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:padding="3dp" >
+
+                <com.daxiangce123.android.ui.view.ImageViewEx
+                    android:id="@id/iv_timeline_user_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/blank"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+
+            <!-- time -->
+
+            <TextView
+                android:id="@id/tv_timeline_time"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/date_daytime_indexer_heigth"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/time_corners"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+                android:textColor="#a8a8a8"
+                android:textSize="@dimen/text_size_major" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>
